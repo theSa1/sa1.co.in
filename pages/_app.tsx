@@ -2,6 +2,7 @@ import type { AppProps } from "next/app"
 import { ChakraProvider } from "@chakra-ui/react"
 import { extendTheme } from "@chakra-ui/react"
 import "../styles/global.css"
+import "../styles/header.css"
 
 const theme = extendTheme({
   fonts: {
