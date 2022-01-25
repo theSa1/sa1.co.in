@@ -13,12 +13,12 @@ import { SocialMedia } from "./SocialMedia"
 import { theme as chakraTheme } from "@chakra-ui/react"
 
 interface HeaderTypes {
-  page: "/" | "/about" | "/contact"
+  page: "/" | "/about" | "/projects" | "/contact"
 }
 
 interface MobileNavTypes {
   isOpen: boolean
-  page: "/" | "/about" | "/contact"
+  page: "/" | "/about" | "/projects" | "/contact"
 }
 
 interface NavTypes {
@@ -27,7 +27,7 @@ interface NavTypes {
     "inline-flex" | "none",
     "inline-flex" | "none"
   ]
-  page: "/" | "/about" | "/contact"
+  page: "/" | "/about" | "/projects" | "/contact"
 }
 
 interface NavButtonsTypes {
