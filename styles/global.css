@@ -3,3 +3,9 @@
 .scrollbar {
   scrollbar-width: thin;
 }
+
+@media only screen and (max-height: 500px) {
+  .home-section {
+    height: 400px;
+  }
+}
