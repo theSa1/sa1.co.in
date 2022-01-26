@@ -95,7 +95,7 @@ export const Header: React.FC<HeaderTypes> = ({ page }) => {
               />
             </svg>
           </Link>
-          <Nav display={["none", "inline-flex", "inline-flex"]} page={"/"} />
+          <Nav display={["none", "inline-flex", "inline-flex"]} page={page} />
           <Flex>
             <NavButtons display={["none", "inline-flex", "inline-flex"]} />
             <Button
