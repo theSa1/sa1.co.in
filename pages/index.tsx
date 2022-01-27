@@ -56,7 +56,7 @@ const Home: NextPage = () => {
             that can change our lives forever for the better.
           </Heading>
           <Flex mt="15px">
-            <Link href="about" passHref>
+            <Link href="/about" passHref>
               <Button
                 w="fit-content"
                 backgroundColor="teal.300"
