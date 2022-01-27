@@ -37,12 +37,32 @@ const Contact = () => {
           </Heading>
           <Formik
             initialValues={{ name: "", email: "", message: "" }}
-            onSubmit={(values, { setSubmitting, resetForm }) => {
-              setTimeout(() => {
-                setSubmitting(false)
+            onSubmit={async (
+              { name, email, message },
+              { setSubmitting, resetForm }
+            ) => {
+              setAlertType("none")
+
+              const res = await fetch(
+                process.env["NEXT_PUBLIC_CONTACT_FORM_API_URL"] as string,
+                {
+                  method: "POST",
+                  headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({ name, email, message }),
+                }
+              )
+
+              if (res.status !== 200) {
+                setAlertType("error")
+              } else {
                 setAlertType("success")
-                resetForm()
-              }, 1000)
+              }
+
+              setSubmitting(false)
+              resetForm()
             }}
             validate={(values) => {
               let errors: { [key: string]: any } = {}

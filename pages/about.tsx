@@ -66,7 +66,7 @@ const About: NextPage = () => {
             </Heading>
             <Flex flexDirection="column" mt="15px">
               <Text color={colors.about.title[colorMode]}>Front-end</Text>
-              <Progress value={80} h="4px" colorScheme="teal" />
+              <Progress value={75} h="4px" colorScheme="teal" />
             </Flex>
             <Flex flexDirection="column" mt="12px">
               <Text color={colors.about.title[colorMode]}>Back-end</Text>
@@ -88,19 +88,19 @@ const About: NextPage = () => {
             </Heading>
             <Flex flexDirection="column" mt="15px">
               <Text color={colors.about.title[colorMode]}>React</Text>
-              <Progress value={80} h="4px" colorScheme="teal" />
+              <Progress value={75} h="4px" colorScheme="teal" />
             </Flex>
             <Flex flexDirection="column" mt="12px">
               <Text color={colors.about.title[colorMode]}>CSS</Text>
-              <Progress value={80} h="4px" colorScheme="teal" />
+              <Progress value={60} h="4px" colorScheme="teal" />
             </Flex>
             <Flex flexDirection="column" mt="12px">
               <Text color={colors.about.title[colorMode]}>Express</Text>
-              <Progress value={80} h="4px" colorScheme="teal" />
+              <Progress value={65} h="4px" colorScheme="teal" />
             </Flex>
             <Flex flexDirection="column" mt="12px">
               <Text color={colors.about.title[colorMode]}>Node JS</Text>
-              <Progress value={80} h="4px" colorScheme="teal" />
+              <Progress value={70} h="4px" colorScheme="teal" />
             </Flex>
           </Flex>
         </Flex>

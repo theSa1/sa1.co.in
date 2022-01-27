@@ -42,6 +42,22 @@ export const Header: React.FC<HeaderTypes> = ({ page }) => {
   const { colorMode } = useColorMode()
   const [likes, setLikes] = React.useState("...")
   const [mobileMenuIsOpen, mobileMenuSetOpen] = React.useState(false)
+
+  React.useEffect(() => {
+    fetch(process.env["NEXT_PUBLIC_LIKES_API_URL"] as string, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({}),
+    }).then((data) => {
+      data.json().then((data) => {
+        setLikes(data.likes.toString())
+      })
+    })
+  }, [])
+
   return (
     <>
       <Flex
@@ -105,6 +121,20 @@ export const Header: React.FC<HeaderTypes> = ({ page }) => {
               ml="10px"
               color={colors.header.likeBtn.text[colorMode]}
               borderColor={colors.header.likeBtn.border[colorMode]}
+              onClick={() => {
+                fetch(process.env["NEXT_PUBLIC_LIKES_API_URL"] as string, {
+                  method: "POST",
+                  headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({ like: true }),
+                }).then((data) => {
+                  data.json().then((data) => {
+                    setLikes(data.likes.toString())
+                  })
+                })
+              }}
             >
               {likes} Likes
             </Button>
