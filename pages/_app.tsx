@@ -5,6 +5,8 @@ import { createBreakpoints } from "@chakra-ui/theme-tools"
 import { theme as chakraTheme } from "@chakra-ui/react"
 import "../styles/global.css"
 import "../styles/header.css"
+import { useRouter } from "next/router"
+import { useEffect } from "react"
 
 const theme = extendTheme({
   fonts: {
@@ -25,7 +27,26 @@ const theme = extendTheme({
   }),
 })
 
+declare global {
+  interface Window {
+    gtag: any
+  }
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+  const handleRouteChange = (url: string) => {
+    window.gtag("config", process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
+      page_path: url,
+    })
+  }
+
+  useEffect(() => {
+    router.events.on("routeChangeComplete", handleRouteChange)
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange)
+    }
+  }, [router.events])
   return (
     <ChakraProvider theme={theme}>
       <Component {...pageProps} />
