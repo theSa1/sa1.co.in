@@ -9,11 +9,20 @@ import { HiChevronRight } from "react-icons/hi"
 import { SocialMedia } from "../components/SocialMedia"
 import { colors } from "../colors"
 import Link from "next/link"
+import Head from "next/head"
 
 const Home: NextPage = () => {
   const { colorMode } = useColorMode()
   return (
     <Layout page="/">
+      <Head>
+        <title>sa1</title>
+        <meta
+          name="description"
+          content="I like to build websites and apps that can change our lives forever for the better."
+        />
+        <meta httpEquiv="content-language" content="en" />
+      </Head>
       <Flex h="calc(100vh - 80px)" className="home-section">
         <Flex
           mt="auto"
@@ -36,6 +45,7 @@ const Home: NextPage = () => {
             Programmer & Web Developer
           </Heading>
           <Heading
+            as="h1"
             color={colors.home.subtitleText[colorMode]}
             size="sm"
             mt="15px"

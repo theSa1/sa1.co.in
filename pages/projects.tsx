@@ -9,12 +9,21 @@ import { colors } from "../colors"
 import { useColorMode } from "@chakra-ui/color-mode"
 import { NextPage } from "next"
 import Link from "next/link"
+import Head from "next/head"
 
 const Projects: NextPage = () => {
   const { colorMode } = useColorMode()
 
   return (
     <Layout page="/projects">
+      <Head>
+        <title>sa1 | My Projects</title>
+        <meta
+          name="description"
+          content="All the projects that i have worked on."
+        />
+        <meta httpEquiv="content-language" content="en" />
+      </Head>
       <Flex
         flexDirection="column"
         mt="auto"

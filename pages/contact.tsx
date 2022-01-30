@@ -17,6 +17,7 @@ import {
   FormErrorMessage,
 } from "@chakra-ui/react"
 import { Formik } from "formik"
+import Head from "next/head"
 
 const Contact = () => {
   const { colorMode } = useColorMode()
@@ -25,6 +26,11 @@ const Contact = () => {
   )
   return (
     <Layout page="/contact">
+      <Head>
+        <title>sa1 | Contact Me</title>
+        <meta name="description" content="Contact me via twitter or email." />
+        <meta httpEquiv="content-language" content="en" />
+      </Head>
       <Grid
         gridTemplateRows="1fr"
         gridTemplateColumns={["1fr", "1fr 40vw", "1fr 1fr"]}

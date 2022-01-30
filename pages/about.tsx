@@ -6,11 +6,17 @@ import { Progress } from "@chakra-ui/react"
 import { useColorMode } from "@chakra-ui/color-mode"
 import { colors } from "../colors"
 import { NextPage } from "next"
+import Head from "next/head"
 
 const About: NextPage = () => {
   const { colorMode } = useColorMode()
   return (
     <Layout page="/about">
+      <Head>
+        <title>sa1 | About Me</title>
+        <meta name="description" content="About me and my skills." />
+        <meta httpEquiv="content-language" content="en" />
+      </Head>
       <Grid
         gridTemplateColumns={["1fr", "1fr 30vw", "1fr 400px"]}
         gridTemplateRows="1fr"
