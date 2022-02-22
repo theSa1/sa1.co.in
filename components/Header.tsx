@@ -6,11 +6,12 @@ import {
   useColorMode,
 } from "@chakra-ui/react"
 import Link from "next/link"
-import React from "react"
+import React, { useState } from "react"
 import { FaBars, FaHeart, FaMoon, FaSun } from "react-icons/fa"
 import { colors } from "../colors"
 import { SocialMedia } from "./SocialMedia"
 import { theme as chakraTheme } from "@chakra-ui/react"
+import ReactCanvasConfetti from "react-canvas-confetti"
 
 interface HeaderTypes {
   page: "/" | "/about" | "/projects" | "/contact"
@@ -58,8 +59,29 @@ export const Header: React.FC<HeaderTypes> = ({ page }) => {
     })
   }, [])
 
+  const [liked, setLiked] = useState(false)
+
   return (
     <>
+      <ReactCanvasConfetti
+        className="Hello"
+        fire={liked}
+        onDecay={() => {
+          setLiked(false)
+        }}
+        style={{
+          position: "fixed",
+          width: "100%",
+          height: "100%",
+          top: 0,
+          left: 0,
+        }}
+        angle={90}
+        origin={{ x: 0.5, y: 1.3 }}
+        spread={200}
+        particleCount={500}
+        startVelocity={70}
+      />
       <Flex
         pos="absolute"
         left="0"
@@ -124,6 +146,7 @@ export const Header: React.FC<HeaderTypes> = ({ page }) => {
                 }).then((data) => {
                   data.json().then((data) => {
                     setLikes(data.likes.toString())
+                    setLiked(true)
                   })
                 })
               }}
