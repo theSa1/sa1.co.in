@@ -58,10 +58,10 @@ const Projects: NextPage = () => {
             },
             {
               id: 3,
-              name: "sa1.co.in",
-              text: "sa1.co.in, the site you are currently visiting, is also made by me.",
-              image: "/images/projects/sa1.png",
-              link: "https://sa1.co.in/",
+              name: "WorldXcric",
+              text: "WorldXcric is one of the websites that i devloped for a friend, Me and my friend manages this website now days and it has a lot of cricket related contect.",
+              image: "/images/projects/worldxcric.png",
+              link: "https://worldxcric.com/",
             },
           ].map((item) => (
             <Box
