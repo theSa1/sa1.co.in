@@ -61,6 +61,8 @@ export const Header: React.FC<HeaderTypes> = ({ page }) => {
 
   const [liked, setLiked] = useState(false)
 
+  const [onceLiked, setOnceLiked] = useState(false)
+
   return (
     <>
       <ReactCanvasConfetti
@@ -136,6 +138,12 @@ export const Header: React.FC<HeaderTypes> = ({ page }) => {
               color={colors.header.likeBtn.text[colorMode]}
               borderColor={colors.header.likeBtn.border[colorMode]}
               onClick={() => {
+                setOnceLiked(true)
+
+                if (onceLiked) {
+                  return
+                }
+
                 fetch(process.env["NEXT_PUBLIC_LIKES_API_URL"] as string, {
                   method: "POST",
                   headers: {
