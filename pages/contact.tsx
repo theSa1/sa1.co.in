@@ -134,7 +134,7 @@ const Contact = () => {
                     ml="10px"
                   >
                     <Input
-                      placeholder="E-Main"
+                      placeholder="E-Mail"
                       backgroundColor={colors.contact.inputBg[colorMode]}
                       borderColor={colors.contact.inputBg.border[colorMode]}
                       name="email"
