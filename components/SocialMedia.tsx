@@ -27,7 +27,7 @@ export const SocialMedia: React.FC<{ color: string }> = ({ color }) => {
           <FaTwitter size="25px" color={color} />
         </IconButton>
       </a>
-      <a href="mailto:me@sa1.co.in">
+      <a href="mailto:i@sa1.dev">
         <IconButton
           aria-label="E-Mail"
           size="sm"
