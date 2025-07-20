@@ -43,10 +43,7 @@ const About: NextPage = () => {
             I'm a web developer/programmer who likes to build websites and
             services as a passion.
             <br />
-            <br />I live in a small village in Gujarat India, my age is only 15
-            but I don't let that be a problem for me, I have built several
-            websites, and although they are far from perfect but as a 15 y/o I'm
-            proud of that achievement.
+            <br />I live in a small village in Gujarat India.
             <br />
             <br />I want to explore deep into web/app development and expand my
             skill set I am also exploring all the technologies for development,
